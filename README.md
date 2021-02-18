@@ -38,3 +38,5 @@ Low-hanging fruits.
 ### p5.js - arduino bridge
 
 [@lorenzoromagnoli](https://github.com/lorenzoromagnoli) made this into a [standalone application](https://github.com/lorenzoromagnoli/p5js-osc) using [electron](https://electron.atom.io/) which bridges p5.js to arduino over OSC.
+
+![](example.gif)
