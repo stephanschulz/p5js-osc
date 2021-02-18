@@ -18,11 +18,16 @@ io.sockets.on('connection', function (socket) {
 		});
 		socket.emit("connected", 1);
 	});
- 	socket.on("message", function (obj) {
-		oscClient.send.apply(oscClient, obj);
-  	});
+// 	socket.on("message", function (obj) {
+//		oscClient.send.apply(oscClient, obj);
+//  	});
+    socket.on("message", function (address,value) {
+        console.log(address + ":" + value);
+        oscClient.send(address, value);
+    });
 	socket.on('disconnect', function(){
 		if (isConnected) {
+            console.log('disconnect');
 			oscServer.kill();
 			oscClient.kill();
 		}
